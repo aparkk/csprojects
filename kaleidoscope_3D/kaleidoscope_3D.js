@@ -14,7 +14,7 @@ let x1, x2, y2, x3, y3, x4,
   petal, layer, type;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowHeight, windowHeight);
   angleMode(DEGREES);
   colorMode(HSB, 360, 100, 100, 100);
 
@@ -34,6 +34,11 @@ function setup() {
   }
 
   newArt();
+
+  printButton = createButton("save jpg");
+  printButton.position(50, 50);
+  printButton.style("background-color", "yellow");
+  printButton.mousePressed(saveJpg);
 }
 
 function newArt() {
@@ -163,4 +168,9 @@ function keyTyped() {
     type = 2
     setup();
   };
+}
+
+
+function saveJpg() {
+  save("FlowerKscope.jpg");
 }
